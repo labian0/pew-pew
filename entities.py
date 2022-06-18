@@ -1,3 +1,4 @@
+import cmath
 class Player():
     def __init__(self, x, y):
         self.coords = [x,y]
@@ -11,4 +12,5 @@ class Bullet():
     def __init__(self, x, y):
         self.coords = [x,y]
 
-    #def shoot(self, )
+    def shoot(self, angle):
+        pass #à faire
