@@ -8,9 +8,10 @@ def find_angle(coords1, coords2): #compare le 2e set de coordonnées par rapport
 
 def main():
     f = tkinter.Tk()
-    
+    canvas = tkinter.Canvas(f, height=500, width=500, bg="black", bd=0)
     #le programme va ici
-
+    
+    canvas.pack()
     f.mainloop()
 
 if __name__ == "__main__":
