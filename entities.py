@@ -13,4 +13,4 @@ class Bullet():
         self.coords = [x,y]
 
     def shoot(self, angle):
-        pass #à faire
+        self.coords = [self.coords[0] + cmath.sin(angle), self.coords[1] + cmath.cos(angle)]
