@@ -9,8 +9,15 @@ def find_angle(coords1, coords2): #compare le 2e set de coordonnées par rapport
 def main():
     f = tkinter.Tk()
     canvas = tkinter.Canvas(f, height=500, width=500, bg="black", bd=0)
-    #le programme va ici
     
+    def shoot_bullet(event):
+        x,y = event.x,event.y
+        proj = Bullet(x, y, 0, 0)
+        proj.shoot(canvas)
+
+    #le programme va ici
+    canvas.bind('<Button-1>', shoot_bullet)
+
     canvas.pack()
     f.mainloop()
 
