@@ -13,8 +13,7 @@ class Player():
         self.coords = [x,y]
 
     def move(self, x, y):
-        self.coords[0] += x
-        self.coords[1] += y
+        self.coords = [x,y]
         
 
 class Bullet():
