@@ -18,11 +18,18 @@ class Player():
         
 
 class Bullet():
-    def __init__(self, start: tuple or list, end: tuple or list, range):
-        self.start_coords = start
+    def __init__(self, start: tuple or list, end: tuple or list, range, canvas):
+        self.start_coords, self.canvas = start, canvas
         #bigger = compare(end[0], end[1], biggest=True)
         angle = find_angle(start, end)
         self.end_coords = (start[0] + cmath.cos(angle).real*range, start[1] + cmath.sin(angle).real*range)
 
-    def shoot(self, canvas):    
-        canvas.create_line(self.start_coords[0], self.start_coords[1], self.end_coords[0],self.end_coords[1], fill="white", width=3)
+    def draw(self):
+        self.line = self.canvas.create_line(self.start_coords[0], self.start_coords[1], self.end_coords[0],self.end_coords[1], fill="white", width=3)
+    
+    def remove(self):
+        self.canvas.delete(self.line)
+    
+    def shoot(self):
+        self.draw()
+        self.canvas.after(250, self.remove)
