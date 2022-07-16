@@ -10,11 +10,11 @@ def compare(a, b, biggest: bool): #compare deux nombres, si biggest est True, co
 
 class Player():
     def __init__(self, x, y):
-        self.coords = [x,y]
+        self.x, self.y = x,y
 
     def move(self, x, y):
-        self.coords[0] += x
-        self.coords[1] += y
+        self.x += x
+        self.y += y
         
 
 class Bullet():

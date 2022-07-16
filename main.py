@@ -11,7 +11,7 @@ def main():
         bullet = Bullet(player.coords,(x, y), 250, canvas)
         bullet.shoot()
 
-    player_oval = canvas.create_oval(player.coords[0]-10,player.coords[1]-10,player.coords[0]+10,player.coords[1]+10, fill="white")
+    player_oval = canvas.create_oval(player.x-10,player.y-10,player.x+10,player.y+10, fill="white")
     def move_player(event):
         directions = {
             "Right": (0, 1),
