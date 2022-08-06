@@ -8,7 +8,7 @@ def main():
     player = Player(0, 0)
     def shoot(event):
         x,y = event.x,event.y
-        bullet = Bullet(player.coords,(x, y), 250, canvas)
+        bullet = Bullet((player.x, player.y),(x, y), 250, canvas)
         bullet.shoot()
 
     player_oval = canvas.create_oval(player.x-10,player.y-10,player.x+10,player.y+10, fill="white")
